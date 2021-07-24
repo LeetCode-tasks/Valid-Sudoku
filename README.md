@@ -33,7 +33,8 @@ Only the filled cells need to be validated according to the mentioned rules.
 
 ,[".",".",".","4","1","9",".",".","5"]
 
-,[".",".",".",".","8",".",".","7","9"]]```
+,[".",".",".",".","8",".",".","7","9"]]
+```
 
 ![image](https://user-images.githubusercontent.com/68459485/126862337-508eaa46-217d-4de5-9c0e-bb879a9d5eb1.png)
 

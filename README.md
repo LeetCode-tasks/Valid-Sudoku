@@ -47,3 +47,52 @@ Only the filled cells need to be validated according to the mentioned rules.
 `board[i].length == 9`
 
 `board[i][j] is a digit or '.'`
+
+## Solution in JavaScript:
+
+```
+var isValidSudoku = function(board) {
+     for (let i = 0; i < board.length; i++) {
+        
+        let horizontalSet = new Set()
+        let verticalSet = new Set()
+        
+        for (let j = 0; j < board.length; j++) {
+            if (horizontalSet.has(board[i][j]) || verticalSet.has(board[j][i])) {
+                return false
+            }
+            
+            if (board[i][j] !== ".") {
+                horizontalSet.add(board[i][j])
+            }
+            
+            if (board[j][i] !== ".") {
+                verticalSet.add(board[j][i])
+            }
+        }
+    }
+     
+     for(let i = 0; i < 9; i = i+3){
+        for(let j = 0; j < 9; j = j+3){
+
+            const gridSet = new Set()
+            let h = i;
+
+            while(h < i + 3) {
+                let k = j;
+
+                while(k < j + 3) {
+                    if(gridSet.has(board[h][k])) return false
+
+                    if(board[h][k] !== '.') gridSet.add(board[h][k])
+
+                    k++
+                }
+                h++
+            }
+        }
+    }
+     
+    return true
+};
+```
